@@ -1,0 +1,95 @@
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+    <head>
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    }
+    body{
+    background:linear-gradient(0deg, #2c2c54 65%, #9980FA 0%);
+    overflow:hidden;
+    min-height:100vh;
+    }
+    .container{
+    height:200px;
+    width:200px;
+    margin:200px auto;
+    perspective: 1000px;
+    position:relative;
+    }
+    .container .slides{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    animation:animate 15s linear infinite;
+    }
+    @keyframes animate {
+    from{
+        transform:rotateY(0deg);
+    }
+    to{
+        transform:rotateY(360deg);
+    }
+    }
+    .container:hover .slides{
+    animation-play-state: paused;
+    }
+    .container .slides > img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    image-rendering:auto;
+    position:absolute;
+    box-shadow:0px 0px 5px gray;
+    }
+    .slides > img:nth-child(1){
+    transform:rotateY(45deg) translateZ(270px);
+    }
+    .slides > img:nth-child(2){
+    transform:rotateY(90deg) translateZ(270px);
+    }
+    .slides > img:nth-child(3){
+    transform:rotateY(135deg) translateZ(270px);
+    }
+    .slides > img:nth-child(4){
+    transform:rotateY(180deg) translateZ(270px);
+    }
+    .slides > img:nth-child(5){
+    transform:rotateY(225deg) translateZ(270px);
+    }
+    .slides > img:nth-child(6){
+    transform:rotateY(270deg) translateZ(270px);
+    }
+    .slides > img:nth-child(7){
+    transform:rotateY(315deg) translateZ(270px);
+    }
+    .slides > img:nth-child(8){
+    transform:rotateY(360deg) translateZ(270px);
+    }
+    .container .slides > img:hover{
+    transition:all .2s ease-in;
+    cursor:pointer;
+    box-shadow:0px 0px 10px white;
+    bottom:20px;
+    -webkit-box-reflect:below 25px linear-gradient(0deg, white 0%, transparent 20%);
+    }
+    </style>
+    </head>
+    <body>
+    <div class="container">
+    <div class="slides">
+        <img src="images/images.jpg">
+        <img src="images/images0.jpg">
+        <img src="images/images1.jpg">
+        <img src="images/images2.jpg">
+        <img src="images/images3.jpg">
+        <img src="images/images4.jpg">
+        <img src="images/images5.jpg">
+        <img src="images/images6.jpg">
+    </div>
+    </div>
+    </body>
+    </html>
